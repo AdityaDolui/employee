@@ -1,0 +1,16 @@
+.ul{
+    
+    min-height: 100vh;
+    display:flex;
+    flex-wrap: wrap;
+    justify-items: stretch;
+    justify-content: space-evenly;
+}
+.spinner-class{
+    margin: 50px;   
+}
+.search-box{
+  
+    margin: 10px;
+    
+}
