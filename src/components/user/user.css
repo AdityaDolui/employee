@@ -1,0 +1,5 @@
+.list-group-flush{
+    margin: auto;
+    max-height: 10vh;
+    border: solid red;
+}
