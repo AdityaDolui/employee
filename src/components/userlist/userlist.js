@@ -2,7 +2,9 @@ import User from "../user/user";
 import "./userlist.css";
 import { useState,useEffect } from "react";
 import Spinner from "react-bootstrap/esm/Spinner";
-
+import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 //console.log("global");
 
 var mainUsers=[];
@@ -48,24 +50,26 @@ function Userlist(){
     setUserList(updatedArr);
 
  }
- 
+ useEffect(function(){
+    fetch(`https://dummyjson.com/users/search?q=${searchValue}`)
+.then(res => res.json())
+.then((res)=>{
+    setUserList(res.users);
+});
+ },[searchValue]);
+
+
   const onSearchValueChange=(e)=>{
 
     const value=e.target.value.toLowerCase();
     setSearchValue(value);
 
-    const updatedArray=mainUsers.filter((user)=>{
-
-        const name=user.firstName.toLowerCase();
-        const title=user.lastName.toLowerCase();
-       return (name.startsWith(value) || title.startsWith(value));
-    });
-    setUserList(updatedArray);
-   //console.log(updatedArray);
+   
  }
     return(
      
-           <div style={{textAlign:"center"}}>
+           <div style={{}}>
+             
             <h2>User List</h2>
             <div className="search-box">
             <form >

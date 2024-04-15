@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 
 function User(props){
   const userD=props.userdetails;
-  const ondelete=props.ondelete;
+const ondelete=props.ondelete;
  // console.log(userD);
     return(
         <Card style={{border:"3px solid black",margin:"5px" ,  maxHeight:"100vh",maxWidth:"40vh", width: '18rem' }}>
